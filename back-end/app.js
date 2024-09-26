@@ -22,6 +22,16 @@ mongoose
 const { Message } = require('./models/Message')
 const { User } = require('./models/User')
 
+
+app.get('/about', (req, res) => {
+  
+  res.json({
+    aboutMe: "Vishnu Kommuri is a senior at NYU, majoring in Computer Science. With a passion for technology, Vishnu has been gaining valuable industry experience through internships, including his work on the ProjNet modernization project during the summer of 2024. Outside of academics, he is a car enthusiast and enjoys basketball, football, and music. Vishnu is also an adventurous foodie who loves trying new cuisines. Recently, he has taken up playing pickleball. His strong technical skills and varied interests make him a well-rounded individual, eager to explore and excel in his career.",
+    imageUrl: "https://media.licdn.com/dms/image/v2/D4E03AQGAkE3UDxm-uA/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1712212217167?e=2147483647&v=beta&t=KiazckDnOrFLay90dpQ8nDwh6LB2vWqgR7C3qZee6Jc"
+  });
+});
+
+
 // a route to handle fetching all messages
 app.get('/messages', async (req, res) => {
   // load all messages from database
